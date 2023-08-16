@@ -15,5 +15,19 @@ __version__ = "0.0.1"
 __author__ = "Ilan Ramos"
 __license__ = "Unlicense"
 
-if __name__ == "__main__":
-    print("Hello, world!") 
+import os
+
+current_language = os.getenv("LANG", "pt_BR.UTF-8")[:5] # snake case
+
+msg = "Hello, world!"
+
+if current_language == "pt_BR":
+    msg = "Olá, mundo!"
+elif current_language == "it_IT":
+    msg = "Ciao, mondo!"
+elif current_language == "sp_SP":
+    msg = "Hola, mundo!"
+elif current_language == "fr_FR":
+    msg = "Bonjour, monde!"
+
+print(msg) 

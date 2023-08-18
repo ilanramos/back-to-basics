@@ -14,10 +14,13 @@ aula_ingles = ["Erik", "Maia", "Joana", "Carlos", "Antonio"]
 aula_musica = ["Erik", "Carlos", "Maria"]
 aula_danca = ["Gustavo", "Sofia", "Joana", "Antonio"]
 
-atividades = [aula_ingles, aula_musica, aula_danca]
+atividades = [
+    (aula_ingles, "Inglês"), 
+    (aula_musica, "Música"),
+    (aula_danca, "Dança")]
 
 # Listar alunos em cada atividade por sala
-for atividade in atividades:
+for atividade, nome_atividade in atividades:
     atividade_sala1 = []
     atividade_sala2 = []
     for aluno in atividade:
@@ -26,5 +29,6 @@ for atividade in atividades:
         elif aluno in sala2:
             atividade_sala2.append(aluno)
 
-    print(f"Atividade sala 1: {atividade_sala1}")
-    print(f"Atividade sala 2: {atividade_sala2}")
+    print(f"{nome_atividade} sala 1: {atividade_sala1}")
+    print(f"{nome_atividade} sala 2: {atividade_sala2}")
+    print("#" * 50)

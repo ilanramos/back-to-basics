@@ -11,7 +11,7 @@ Execution:
 - python3 hello.py
 - ./hello.py
 """
-__version__ = "0.0.1"
+__version__ = "0.1.2"
 __author__ = "Ilan Ramos"
 __license__ = "Unlicense"
 
@@ -19,15 +19,12 @@ import os
 
 current_language = os.getenv("LANG", "pt_BR.UTF-8")[:5] # snake case
 
-msg = "Hello, world!"
+msg = {
+    "en_US": "Hello, world!",
+    "pt_BR": "Olá, mundo!",
+    "it_IT": "Ciao, mondo!",
+    "sp_SP": "Hola, mundo!",
+    "fr_FR": "Bonjour, monde!",
+}
 
-if current_language == "pt_BR":
-    msg = "Olá, mundo!"
-elif current_language == "it_IT":
-    msg = "Ciao, mondo!"
-elif current_language == "sp_SP":
-    msg = "Hola, mundo!"
-elif current_language == "fr_FR":
-    msg = "Bonjour, monde!"
-
-print(msg) 
+print(msg.get(current_language, "Hello, world!"))

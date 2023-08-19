@@ -3,7 +3,7 @@
 
 Imprimir a lista de crianças agrupadas por sala que frequenta cada uma das atividade
 """
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __author__ = "Ilan Ramos"
 
 # Dados

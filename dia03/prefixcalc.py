@@ -29,23 +29,20 @@ __author__ = "Ilan Ramos"
 
 import sys
 
-cli_arguments = sys.argv
+cli_arguments = sys.argv[1:]
 
 nums = []
 
-if len(cli_arguments) > 4:
-    print("Too many arguments. Eg. `sum 2 3`")
-    sys.exit(1)
-elif len(cli_arguments) == 1:
+if len(cli_arguments) == 0:
     op = input("Operation: ")
     nums.append(input("n1: "))
     nums.append(input("n2: "))
-elif len(cli_arguments) == 4:
-    op = cli_arguments[1]
+elif len(cli_arguments) == 3:
+    op = cli_arguments[0]
+    nums.append(cli_arguments[1])
     nums.append(cli_arguments[2])
-    nums.append(cli_arguments[3])
 else:
-    print("Arguments are missing. Eg. `sum 2 3`")
+    print("Invalid operation. Eg. `sum 2 3`")
     sys.exit(1)
 
 validated_nums = []
